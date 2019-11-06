@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CookieHuntApp.Pages.PickDate">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="1" Margin="40,40,40,0">
+                <Label x:Name="label"
+               Text="Pick last date of offer"
+               FontSize="Large"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center" />
+                <ListView Margin="5" x:Name="LvItems" HasUnevenRows="true" ItemSelected="LvItems_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.25" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Column="1" Margin="5,5,0,0">
+                                        <Label Text="{Binding Name}" VerticalOptions="Center" FontSize="16" TextColor="Black" />
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+                <Button Text="Add coupon" BackgroundColor="SandyBrown" TextColor="White" x:Name="BtnPickDate" Clicked="BtnPickDate_Clicked" />
+                <Entry Placeholder="Price" x:Name="EntPrice"/>
+                <Entry Placeholder="Points for item" x:Name="EntPoints"/>
+                <DatePicker MinimumDate="1/1/2019"
+                            MaximumDate="12/12/2025"
+                            DateSelected="DatePicker_DateSelected"
+                            />
+                <Label x:Name="MainLabel"
+                       FontSize="30"
+                       HorizontalOptions="Center"
+                       TextColor="White"/>
+            </StackLayout>
+        </Grid>                                 
+    </ContentPage.Content>
+</ContentPage>

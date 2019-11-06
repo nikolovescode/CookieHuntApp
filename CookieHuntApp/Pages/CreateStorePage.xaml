@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CookieHuntApp.Pages.CreateStorePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <StackLayout x:Name="Logo" VerticalOptions="Start" HorizontalOptions="Start" >
+                    <Image x:Name="LogoIcon" Source="logo.png" Margin="0,80,0,0"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Margin="40,20,40,0">
+                    <Label x:Name="label"
+               Text="Register New Store"
+               FontSize="Large"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center" />
+                    <Entry Placeholder="Name of store" x:Name="EntName" IsPassword="True"/>
+                    <Button Text="Add" BackgroundColor="SandyBrown" x:Name="BtnAddStore" Clicked="BtnAddStore_Clicked"/>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
